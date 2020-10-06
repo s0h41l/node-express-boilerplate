@@ -16,9 +16,17 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" class="form-control" placeholder="*********">
                 </div>
+                <% if(typeof error != 'undefined' && error) { %>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <%= error %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <% } %>
                 <div class="form-group">
                     <button class="btn btn-info btn-block">Login</button>
-                    <button class="btn btn-default btn-block border">Register</button>
+                    <a href="/auth/register" class="btn btn-default btn-block border">Register</a>
                 </div>
             </form>
         </div>
