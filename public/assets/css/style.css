@@ -1,0 +1,13 @@
+.bg-purple {
+    background-color: purple;
+}
+
+* {
+    border-radius: 0 !important;
+}
+
+.center {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
