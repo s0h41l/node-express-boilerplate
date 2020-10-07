@@ -4,5 +4,5 @@
 npm install
 </div>
 <div>
-npm start
+node index.js
 </div>
