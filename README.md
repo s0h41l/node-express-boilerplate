@@ -1,4 +1,6 @@
 # node-express-boilerplate
-<h4>Installation</h4>
+<h3>Installation</h3>
+<div style="border:1px grey solid">
 npm install
+</div>
 npm start
