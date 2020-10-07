@@ -1,6 +1,8 @@
 # node-express-boilerplate
 <h3>Installation</h3>
-<div style="border:1px grey solid">
+<div>
 npm install
 </div>
+<div>
 npm start
+</div>
