@@ -1,10 +1,21 @@
 const becrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 const User = require('../models/user');
 
 const saltRounds = 10; // salt rounds for brcypt
 
 exports.register = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const errorString = errors.array().map((error) => `${error.msg} ${error.param}`);
+      res.render('register', {
+        title: 'Register',
+        isAuth: req.session.isAuth,
+        name: req.session.name,
+        error: errorString.join(', '),
+      });
+    }
     const { name, email, password } = req.body;
     User.findOne({ email })
       .then((usr) => {
@@ -55,6 +66,16 @@ exports.register = async (req, res) => {
 
 exports.login = (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const errorString = errors.array().map((error) => `${error.msg} ${error.param}`);
+      res.render('login', {
+        title: 'Login',
+        isAuth: req.session.isAuth,
+        name: req.session.name,
+        error: errorString.join(', '),
+      });
+    }
     const { email, password } = req.body;
     User.findOne({ email }).then((user) => {
       if (!user) {
