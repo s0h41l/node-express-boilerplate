@@ -2,6 +2,10 @@
     background-color: purple;
 }
 
+.bg-blue {
+    background-color: #3259CA;
+}
+
 * {
     border-radius: 0 !important;
 }

@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
+const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(session({
 }));
 
 app.use('/auth', authRoutes);
+app.use('/dashboard', dashboardRoutes);
 app.use('/', (req, res) => {
   res.render('index', {
     title: 'Home',
